@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Movie Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quote-container">
+        <div id="daily-quote"></div>
+    </div>
+    <div class="comment-container">
+        <h2>Comments</h2>
+        <input type="text" id="display-name" placeholder="Enter your display name">
+        <textarea id="comment-text" placeholder="Enter your comment"></textarea>
+        <button onclick="addComment()">Add Comment</button>
+        <div id="comments-section"></div>
+    </div>
+    <div class="app">
+        <h1>MoodFlix 🎥🍿</h1>
+        <p>Feeling moody? Pick a mood and we'll recommend a flick!</p>
+        <div class="buttons">
+            <button onclick="recommendMovie('happy')">😊 Happy</button>
+            <button onclick="recommendMovie('sad')">😢 Sad</button>
+            <button onclick="recommendMovie('excited')">🤩 Excited</button>
+            <button onclick="recommendMovie('calm')">😌 Calm</button>
+            <button onclick="recommendMovie('romantic')">💖 Romantic</button>
+            <button onclick="recommendMovie('adventurous')">🗺️ Adventurous</button>
+            <button onclick="recommendMovie('thrilled')">😱 Thrilled</button>
+            <button onclick="recommendMovie('nostalgic')">🕰️ Nostalgic</button>
+        </div>
+        <div id="recommendation"></div>
+        <div id="rating">
+            <p>Rate this movie:</p>
+            <span onclick="rateMovie(1)">⭐</span>
+            <span onclick="rateMovie(2)">⭐</span>
+            <span onclick="rateMovie(3)">⭐</span>
+            <span onclick="rateMovie(4)">⭐</span>
+            <span onclick="rateMovie(5)">⭐</span>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
