@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodFlix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chat-section">
+        <h2>Live Chat (Chat access requires payment)</h2>
+        <input type="text" id="username-input" placeholder="Enter your display name" oninput="enableChat()">
+        <div id="chat-box">
+            <!-- Chat messages will appear here -->
+        </div>
+        <input type="text" id="chat-input" placeholder="Enter message" disabled>
+        <button onclick="sendMessage()" disabled>Send</button>
+    </div>
+
+    <div id="main-container">
+        <h1>MoodFlix</h1>
+        <div id="mood-rating-section">
+            <h2>Select Your Mood</h2>
+            <div class="mood-buttons">
+                <button onclick="suggestMovie('happy')">😊 Happy</button>
+                <button onclick="suggestMovie('sad')">😢 Sad</button>
+                <button onclick="suggestMovie('excited')">😆 Excited</button>
+                <button onclick="suggestMovie('relaxed')">😌 Relaxed</button>
+            </div>
+            <div class="mood-buttons">
+                <button onclick="suggestMovie('scared')">😱 Scared</button>
+                <button onclick="suggestMovie('romantic')">😍 Romantic</button>
+                <button onclick="suggestMovie('angry')">😡 Angry</button>
+                <button onclick="suggestMovie('bored')">😴 Bored</button>
+            </div>
+            <p id="movie-suggestion"></p>
+
+            <h2>Rate the Movie</h2>
+            <select id="rating-select" class="styled-dropdown" disabled>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+            <button id="rate-button" onclick="rateMovie()" disabled>Rate</button>
+            <p id="rating-message"></p>
+        </div>
+    </div>
+    <div id="payment-instructions"> <h2>Payment Instructions</h2> <p>To access the live chat, please send ETH to the following address:</p> <p><strong>0xBB6a7D772e410Be8Acacb32025d702f7b8627739</strong></p> <p>Once the payment is confirmed, you will be able to use the chat feature. Please make sure to use MetaMask for the transaction.</p> </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
