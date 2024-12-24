@@ -7,8 +7,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+    flex-direction: column;
 }
 
 h1 {
@@ -41,6 +42,13 @@ h1 {
 
 #mood-rating-section h2, #chat-section h2, #payment-instructions h2 {
     color: #e74c3c;
+}
+
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
@@ -110,7 +118,7 @@ button:hover {
 }
 
 #chat-input {
-    background-color: #add8e6;
+    background-color: #e74c3c;
     color: #fff;
 }
 
@@ -131,4 +139,46 @@ button:hover {
     bottom: 20px;
     right: 20px;
     word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #chat-section, #payment-instructions {
+        width: 100%;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    #main-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .styled-dropdown {
+        width: 100%;
+    }
+
+    #username-input, #chat-input {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
 }
